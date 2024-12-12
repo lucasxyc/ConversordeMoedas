@@ -13,18 +13,21 @@ public class Principal {
         ServicoTaxasCambio servico = new ServicoTaxasCambio();
 
         try {
-            System.out.println("Digite o código da moeda base (EX: USD, BRL, EUR): ");
-            String moedaBase = leitura.nextLine().toUpperCase();
-
-            System.out.println("Digite o código da moeda de destino: (EX: EUR, BRL, USD");
+            System.out.println("Digite o código da moeda de origem (EX: USD, BRL, EUR): ");
             String moedaOrigem = leitura.nextLine().toUpperCase();
+
+            System.out.println("Digite o código da moeda de destino: (EX: EUR, BRL, USD): ");
+            String moedaDestino = leitura.nextLine().toUpperCase();
 
             System.out.println("Digite um valor para a conversão: ");
             double valorParaConversao = leitura.nextDouble();
 
-            System.out.println("Convertendo " + valorParaConversao + " " + moedaBase + " para " + moedaOrigem);
+            System.out.println("Convertendo " + valorParaConversao + " " + moedaOrigem + " para " + moedaDestino);
 
-            TaxasCambio taxas = servico.obterTaxasCambio(moedaOrigem);
+            TaxasCambio taxas = servico.obterTaxasCambio(moedaDestino);
+            double valorConvertido = ConversorMoeda.converter(valorParaConversao, moedaOrigem, moedaDestino, taxas);
+
+            System.out.printf("O valor convertido é: %.2f %s\n", valorConvertido, moedaDestino);
 
         } catch (Exception e) {
             System.err.println("Erro: " + e.getMessage());

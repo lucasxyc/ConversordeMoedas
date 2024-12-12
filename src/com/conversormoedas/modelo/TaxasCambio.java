@@ -1,9 +1,13 @@
 package com.conversormoedas.modelo;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.Map;
 
 public class TaxasCambio {
+    @SerializedName("base_code")
     private String moedaBase;
+
+    @SerializedName("conversion_rates")
     private Map<String, Double> taxas;
 
     public Map<String, Double> getTaxas() {
