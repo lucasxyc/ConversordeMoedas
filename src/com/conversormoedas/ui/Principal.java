@@ -31,8 +31,6 @@ public class Principal {
 
         } catch (Exception e) {
             System.err.println("Erro: " + e.getMessage());
-        } finally {
-            System.out.println("O programa finalizou corretamente");
         }
 
     }
