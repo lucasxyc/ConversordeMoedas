@@ -15,7 +15,7 @@ public class Principal {
         try {
             System.out.println("--------------------------------------------------------------\n");
             System.out.println("Bem-Vindo (a) ao Conversor de Moedas!\n" +
-                    "Digite o código de uma moeda no padrão ISO 4272 para conversão.\n" +
+                    "Digite o código de uma moeda no padrão ISO 4217 para conversão.\n" +
                     "Ex: Real  - BRL | Dólar - USD | Euro - EUR | Peso argentino - ARS");
             System.out.println("\n--------------------------------------------------------------");
             System.out.println("Digite o código da moeda de origem: ");
